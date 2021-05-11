@@ -1,9 +1,5 @@
-
 <?php
-
-session_start();
 require("../database/conexao.php");
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,17 +17,30 @@ require("../database/conexao.php");
         require("../componentes/header/header.php");
     ?>
     <div class="content">
+        <div style="position: absolute; top:0; right:0;">
+            <?php
+                if(isset($_SESSION["senha"])){
+                    echo $_SESSION["erros"][0];
+                }
+                if(isset($_SESSION["mensagem"])){
+                    echo $_SESSION["mensagem"];
+                }
+
+                unset($_SESSION["erros"]);
+                unset($_SESSION["mensagem"]);
+            ?>
+        </div>
         <section class="produtos-container">
         <!--se o usuairo estiver logado, mostrar os botoes-->
             <?php
-                if(isset($_SESSION["usuario"])){
+                if(isset($_SESSION["usuarioId"])){
             ?>
             <header>
                 <button onclick="javascript:window.location.href ='./novo/'">Novo Produto</button>
                 <button>Adicionar Categoria</button>
             </header>
             <?php
-                unset($_SESSION["usuario"]);
+                // unset($_SESSION["usuarioId"]);
             }
             ?>
             <main>
