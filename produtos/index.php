@@ -24,14 +24,15 @@ require("../database/conexao.php");
         <section class="produtos-container">
         <!--se o usuairo estiver logado, mostrar os botoes-->
             <?php
-                if(isset($_SESSION["id"])){                   
-            ?>       
+                if(isset($_SESSION["usuario"])){
+            ?>
             <header>
-                <button onclick="javascript:window.location.href ='./novo/'" >Novo Produto</button>
+                <button onclick="javascript:window.location.href ='./novo/'">Novo Produto</button>
                 <button>Adicionar Categoria</button>
             </header>
-            <?php 
-                }
+            <?php
+                unset($_SESSION["usuario"]);
+            }
             ?>
             <main>
                 <article class="card-produto">

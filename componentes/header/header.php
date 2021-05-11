@@ -17,7 +17,7 @@ session_start();
     }else{
     ?>
         <ul>
-            <form action="../acoes.php" method="POST">
+            <form action="/web-backend/icatalogo-parte1/componentes/header/acoes.php" method="POST">
                 <input type="hidden" name="acao" value="logout"/>
                 <?php
                     echo("Seja Bem Vindo " . $_SESSION["nome"]);
@@ -33,7 +33,7 @@ session_start();
     <div id="container-login" class="container-login">
 
     <h1>fazer login</h1>
-    <form method="POST" action="../acoes.php">
+    <form method="POST" action="/web-backend/icatalogo-parte1/componentes/header/acoes.php">
         <input type="hidden" name="acao" value="login">
         <input type="text" name="usuario" placeholder="Usuário">
         <input type="password" name="senha" placeholder="Senha">
