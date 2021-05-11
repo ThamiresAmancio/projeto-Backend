@@ -1,4 +1,10 @@
 
+<?php
+
+session_start();
+require("../database/conexao.php");
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,15 +17,22 @@
 </head>
 
 <body>
-    <header>
-        <input type="search" placeholder="Pesquisar" />
-    </header>
+    <?php
+        require("../componentes/header/header.php");
+    ?>
     <div class="content">
         <section class="produtos-container">
+        <!--se o usuairo estiver logado, mostrar os botoes-->
+            <?php
+                if(isset($_SESSION["id"])){                   
+            ?>       
             <header>
-                <button onclick="javascript:window.location.href ='./novo/'">Novo Produto</button>
+                <button onclick="javascript:window.location.href ='./novo/'" >Novo Produto</button>
                 <button>Adicionar Categoria</button>
             </header>
+            <?php 
+                }
+            ?>
             <main>
                 <article class="card-produto">
                     <figure>

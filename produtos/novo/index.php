@@ -21,7 +21,7 @@
   <title>Administrar Produtos</title>
 </head>
 <body>
-  <header>
+<header>
     <input type="search" placeholder="Pesquisar" />
   </header>
   <div class="content">
